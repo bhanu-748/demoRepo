@@ -1,0 +1,200 @@
+/* Timesheet Component Styles */
+
+.timesheet-component {
+  width: 100%;
+}
+
+.timesheet-component .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timesheet-component h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.timesheet-component .form-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.timesheet-component .form-group {
+  margin-bottom: 15px;
+}
+
+.timesheet-component .form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.timesheet-component .form-group label .required {
+  color: #e74c3c;
+  margin-left: 4px;
+}
+
+.timesheet-component .form-group input,
+.timesheet-component .form-group select,
+.timesheet-component .form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.timesheet-component .form-group input:focus,
+.timesheet-component .form-group select:focus,
+.timesheet-component .form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.timesheet-component .form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.timesheet-component .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.timesheet-component .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.timesheet-component .btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.timesheet-component .btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.timesheet-component .btn-secondary {
+  background: #e8eaf6;
+  color: #667eea;
+  border: 1px solid #667eea;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.timesheet-component .btn-secondary:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.timesheet-component .table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.timesheet-component .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timesheet-component .data-table thead {
+  background: #f8f9fa;
+}
+
+.timesheet-component .data-table th,
+.timesheet-component .data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.timesheet-component .data-table th {
+  font-weight: 600;
+  color: #333;
+}
+
+.timesheet-component .data-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.timesheet-component .badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.timesheet-component .badge.submitted {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.timesheet-component .badge.approved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.timesheet-component .badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.timesheet-component .badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timesheet-component .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timesheet-component .section-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .timesheet-component .data-table {
+    font-size: 12px;
+  }
+
+  .timesheet-component .data-table th,
+  .timesheet-component .data-table td {
+    padding: 8px;
+  }
+}

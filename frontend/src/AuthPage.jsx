@@ -34,7 +34,8 @@ function AuthPage() {
       setLoading(false);
       return;
     }
-    
+
+
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(loginEmail)) {
@@ -43,6 +44,11 @@ function AuthPage() {
       setLoading(false);
       return;
     }
+
+
+
+
+    
     
     try {
       const response = await fetch(`${API_BASE_URL}/login`, {
@@ -55,6 +61,7 @@ function AuthPage() {
           password: loginPassword,
         }),
       });
+
 
       const data = await response.json();
 
@@ -73,10 +80,10 @@ function AuthPage() {
       // Store user data in localStorage
       localStorage.setItem('user', JSON.stringify(data));
       
-      // Redirect after 2 seconds
+      // Redirect to dashboard
       setTimeout(() => {
-        window.location.href = '/dashboard'; // Change this to your dashboard route
-      }, 2000);
+        window.location.reload();
+      }, 1500);
     } catch (error) {
       console.error('Login error:', error);
       setMessage('Error connecting to server');
