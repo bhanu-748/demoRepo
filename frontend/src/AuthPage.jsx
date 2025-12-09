@@ -5,6 +5,7 @@ function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   
+  
   // Login form state
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
@@ -46,10 +47,6 @@ function AuthPage() {
     }
 
 
-
-
-    
-    
     try {
       const response = await fetch(`${API_BASE_URL}/login`, {
         method: 'POST',
@@ -78,7 +75,7 @@ function AuthPage() {
       setLoginPassword('');
       
       // Store user data in localStorage
-      localStorage.setItem('user', JSON.stringify(data));
+      localStorage.setItem('user', JSON.stringify(data.user));
       
       // Redirect to dashboard
       setTimeout(() => {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AuthPage from './AuthPage';
-import Dashboard from './Dashboard';
+import Dashboard from './pages/Dashboard';
+
 import './App.css';
 
 function App() {

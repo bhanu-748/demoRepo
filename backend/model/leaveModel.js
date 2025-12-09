@@ -22,7 +22,6 @@ const Leave = sequelize.define(
     leave_type: {
       type: DataTypes.STRING,
       allowNull: false,
-      enum: ["Casual Leave", "Sick Leave", "Annual Leave", "Maternity Leave"],
     },
     start_date: {
       type: DataTypes.DATE,
@@ -43,7 +42,6 @@ const Leave = sequelize.define(
     status: {
       type: DataTypes.STRING,
       defaultValue: "Pending",
-      enum: ["Pending", "Approved", "Rejected"],
     },
     created_at: {
       type: DataTypes.DATE,
@@ -55,12 +53,13 @@ const Leave = sequelize.define(
     },
   },
   {
-    tableName: "leaves",
+    tableName: "leaves",     // MUST MATCH DB
+    freezeTableName: true,   // 💥 STOP SEQUELIZE FROM CHANGING CASE/PLURAL
     timestamps: false,
   }
 );
 
-// Association with User
+// Associations
 User.hasMany(Leave, { foreignKey: "user_id", onDelete: "CASCADE" });
 Leave.belongsTo(User, { foreignKey: "user_id" });
 

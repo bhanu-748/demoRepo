@@ -4,6 +4,11 @@ const LeaveController = require("../controller/leaveController");
 
 const router = express.Router();
 
+router.get("/test", (req, res) => {
+  res.json({ message: "Leave router working!" });
+});
+
+
 // Apply for leave
 router.post("/apply", LeaveController.applyLeave);
 

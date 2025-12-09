@@ -14,7 +14,7 @@ const UserController = {
           error: "Name, email, and password are required" 
         });
       }
-
+      
       // Hash password
       const password_hash = await bcrypt.hash(password, 10);
 
